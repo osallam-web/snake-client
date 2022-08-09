@@ -4,22 +4,20 @@ connect();
 
 // setup interface to handle user input from stdin
 
-/*const setupInput = function () {
+const setupInput = function () {
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
+  stdin.on("data", handleUserInput);
   return stdin;
 };
 
-stdin.on("data", handleUserInput);
+const handleUserInput = function (key) {
+  if (key === "\u0003") {
+    process.exit();
+  }
+};
 
-const handleUserInput = function (data) {
-  if (data = "ctrl" + "c") {
-    break
-  }
-  else {
-    return data;
-  }
-  // your code here
-};*/
+setupInput()
+
