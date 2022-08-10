@@ -9,6 +9,8 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to the game server");
     conn.write("Name: OAS");
+    conn.write("Say: Hey");
+    conn.write("Say: Enjoy");
   });
 
   
@@ -16,20 +18,6 @@ const connect = function () {
     console.log(data);
   });
 
-
-  /*
-  conn.on("moveDown", () => {
-    console.log("Move: down");
-  });
-
-  conn.on("moveRight", () => {
-    console.log("Move: right");
-  });
-
-  conn.on("moveLeft", () => {
-    console.log("Move: left");
-  });
-  */
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
